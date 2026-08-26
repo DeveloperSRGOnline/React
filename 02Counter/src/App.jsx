@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './App.css'
 
 function App() {
 
@@ -12,7 +11,11 @@ function App() {
     // console.log("hello from my side")
     // counter = counter + 1;
     // console.log(counter)
-    setCounter(counter + 1)
+    if (counter < 20) setCounter(counter + 1)
+  }
+
+  const removeValue = () => {
+    if(counter > 0) setCounter(counter - 1)
   }
 
   // React react karti hai variables ke updation pe isliye use react kehete hai , badi hi reactive hai
@@ -28,7 +31,9 @@ function App() {
         onClick={addValue}// just passing refrence becuse refrence pass karne ke vajah se ab onclick isse jab click hoga button par tab use call karsakta hai turant call nahi hoga
       >Add Value</button>
       <br />
-      <button>Remove Value</button>
+      <button
+      onClick={removeValue}
+      >Remove Value</button>
     </>
   )
 }
